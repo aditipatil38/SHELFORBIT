@@ -1,0 +1,268 @@
+
+
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Chat Component */
+.chatContainer {
+  padding: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+.chatHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
+.chatHeader h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  background: linear-gradient(to right, #facc15, #faca00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chatActions {
+  display: flex;
+  gap: 15px;
+}
+
+.chatActions button {
+  background-color: #facc15;
+  color: #333;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.chatActions button:hover {
+  background-color: #d9b514;
+  transform: translateY(-2px);
+}
+
+.messagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 65vh;
+  overflow-y: auto;
+  background-color: #ffffad;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.msg {
+  display: flex;
+  align-items: flex-start;
+  max-width: 60%;
+  padding: 12px;
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+
+.msgAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+
+.msg.sent {
+  background-color: #fffbea;
+  align-self: flex-end;
+  text-align: right;
+  transform: translateX(5px);
+}
+
+.msg.received {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+  transform: translateX(-5px);
+}
+
+.msg:hover {
+  transform: scale(1.02);
+}
+
+.msg img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.msg p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* SendMessage Component */
+.sendMessageForm {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #fafafa;
+  border-top: 2px solid #f0f2f5;
+}
+
+.msgInput {
+  flex: 1;
+  margin-right: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.msgInput:focus {
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.sendButton {
+  background-color: #facc15;
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sendButton:hover {
+  background-color: #d9b514;
+  transform: translateY(-2px);
+}
+
+/* SignIn Component */
+.signIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.signInButton {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #facc15;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.signInButton:hover {
+  background-color: #d9b514;
+}
+
+/* SignOut Component */
+.signOut {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  border-bottom: 2px solid #f0f2f5;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.signOut button {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #facc15;
+  color: #333;
+  border-radius: 8px;
+}
+
+.signOut button:hover {
+  background-color: #d9b514;
+}
+
+/* Room Component */
+.roomContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.roomInput {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 320px;
+}
+
+.roomInput:focus {
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.joinRoomButton {
+  padding: 12px 25px;
+  background-color: #facc15;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.joinRoomButton:hover {
+  background-color: #d9b514;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

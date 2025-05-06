@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Libraries List{% endblock %}
+
+{% block content %}
+<h2>Libraries List</h2>
+<ul>
+    {% for lib in libs %}
+        <li><a href="{% url 'firstbook:lib_detail' lib.libid %}">{{ lib.name }}</a></li>
+    {% empty %}
+        <li>No libraries found.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

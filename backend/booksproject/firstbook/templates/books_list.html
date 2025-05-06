@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Books List{% endblock %}
+
+{% block content %}
+<h2>Books List</h2>
+
+<!-- Search form -->
+<form method="get" action="{% url 'firstbook:books_list' %}">
+    <input type="text" name="q" value="{{ query }}" placeholder="Search for books...">
+    <button type="submit">Search</button>
+</form>
+
+<!-- Book list -->
+<ul>
+    {% for book in page_obj %}
+        <li>
+            <a href="{% url 'firstbook:book_detail' book.bookid %}">
+                <strong>{{ book.name }}</strong>
+            </a><br>
+            <strong>{{ book.name }}</strong><br>
+            <em>Author:</em> {{ book.author }}<br>
+            <em>Publisher:</em> {{ book.publisher }}
+        </li>
+    {% empty %}
+        <li>No books found.</li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination -->
+<div>
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    <div>
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% if query %}&q={{ query }}{% endif %}">First</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">Previous</a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">Next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% if query %}&q={{ query }}{% endif %}">Last</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}
+
