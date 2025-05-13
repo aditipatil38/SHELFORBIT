@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
-
 {% block title %}Library Detail{% endblock %}
 
 {% block content %}
-<h2>{{ lib.name }}</h2>
-<p><strong>Location:</strong> {{ lib.location }}</p>
-<p><strong>Books Count:</strong> {{ lib.books.count }}</p>
-<a href="{% url 'firstbook:libs_list' %}">Back to list</a>
+<div class="max-w-xl mx-auto border rounded-lg shadow p-6">
+    <h2 class="text-2xl font-bold text-[#facc15] mb-4">{{ lib.name }}</h2>
+    <p class="mb-2"><strong>Location:</strong> {{ lib.location }}</p>
+<!-- <p class="mb-4"><strong>Books Count:</strong> {{ lib.books.count }}</p>-->
+</div>
+<a href="{% url 'firstbook:libs_list' %}" class="text-[#facc15] hover:underline">← Back to list</a>
+
 {% endblock %}
+

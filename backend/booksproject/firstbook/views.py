@@ -63,10 +63,19 @@ def book_detail(request, pk):
     return render(request, 'book_detail.html', {'book': book})
 
 def libs_list(request):
+    query = request.GET.get("q")  # Retrieve the search query from the URL parameters
     libs = Library.objects.all()
-    context = {'libs' : libs}
-    return render(request, 'libs_list.html', context)
 
+    if query:
+        libs = libs.filter(name__icontains=query)  # Filter by search query
+
+    # Add pagination
+    paginator = Paginator(libs, 12)  # Display 12 books per page
+    page_number = request.GET.get("page")  # Get the current page number from URL
+    page_obj = paginator.get_page(page_number)
+
+    context = {'page_obj': page_obj, 'query': query}
+    return render(request, 'libs_list.html', context)
 def lib_detail(request, pk):
     lib = get_object_or_404(Library, pk=pk)
     return render(request, 'lib_detail.html', {'lib':lib})

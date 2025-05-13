@@ -3,22 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Site{% endblock %}</title>
+    <title>{% block title %}BookShelf{% endblock %}</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/29/29302.png" type="image/png">
+
+    <!-- Add Tailwind custom theme if needed -->
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Welcome to My Site</h1>
+<body class="text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-[#facc15] text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold"> BookShelf</h1>
+            <nav class="space-x-6">
+                <a href="/" class="hover:underline font-medium">Home</a>
+                <a href="/about/" class="hover:underline font-medium">About</a>
+                <a href="{% url 'firstbook:books_list' %}" class="hover:underline font-medium">Book</a>
+                <a href="{% url 'firstbook:libs_list' %}" class="hover:underline font-medium">Library</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        {% block content %}  <!-- This is where child templates will insert their content -->
+    <!-- Home page special content -->
+    {% if request.path == '/' %}
+
+    <section class="container mx-auto px-4 py-12 text-center">
+        <h2 class="text-4xl font-bold mb-6 text-[#facc15] animate-pulse">Welcome to BookShelf</h2>
+        <p class="text-lg text-gray-600 mb-10">Where <br> Stories spark ideas.<br> Ideas spark conversations.</p>
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 p-6">
+                <h3 class="text-xl font-semibold mb-2 text-[#facc15]"> Book Discovery</h3>
+                <p class="text-gray-600">Explore a wide collection of books across genres and authors.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 p-6">
+                <h3 class="text-xl font-semibold mb-2 text-[#facc15]"> Book Recommendations</h3>
+                <p class="text-gray-600">Get personalized recommendations based on your preferences.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white border border-gray-200 rounded-lg shadow hover:shadow-lg transform hover:scale-105 transition duration-300 p-6">
+                <h3 class="text-xl font-semibold mb-2 text-[#facc15]"> Book Discussions</h3>
+                <p class="text-gray-600">Join discussions and share thoughts with fellow book lovers.</p>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8 flex-grow">
+        {% block content %}
         {% endblock %}
     </main>
 
-    <footer>
-        <p>© 2025 My Site</p>
+    <!-- Footer -->
+    <footer class="bg-gray-200 text-center py-4 text-gray-500 text-sm">
+        © 2025 BookShelf. All rights reserved.
     </footer>
+
 </body>
 </html>
-
 
