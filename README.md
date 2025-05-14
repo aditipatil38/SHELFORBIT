@@ -122,8 +122,7 @@ Displays the root endpoints available for the API.
 ---
 
 ## Book Discussion Platform 
-**Real-time Chat Room**
-BookShelf includes a React-based real-time chat platform where users can join discussion rooms and interact.
+Real-time Chat Room **Orbit** includes a React-based real-time chat platform where users can join discussion rooms and interact.
 
 <p align="center">
   <table>
