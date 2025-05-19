@@ -10,7 +10,7 @@
 
 ## Tech Stack
 
-<img align ="right" src="https://go-skill-icons.vercel.app/api/icons?i=python,django,djangorestframework,javascript,react,streamlit"/>
+<img align ="right" src="https://go-skill-icons.vercel.app/api/icons?i=python,django,djangorestframework,sqlite,firebase,javascript,react,streamlit"/>
 
 - **Frontend** : HTML, CSS, Javascript, React, Streamlit
 - **Backend / API** : Python, Django, Django REST Framework
