@@ -1,11 +1,22 @@
+
+***
+
+<h1 align="center">The ShelfOrbit</h1>
+
+<p align = "center"> An interactive web application to discover, search, and discuss books seamlessly. Built using Django, Django REST Framework, and React.js, it integrates book discovery, recommendations, and real-time chat into a single platform. 
+</p>
+
+***
+
+## Tech Stack
+
+<img align ="right" src="https://go-skill-icons.vercel.app/api/icons?i=python,django,djangorestframework,javascript,react,streamlit"/>
+
+- **Frontend** : HTML, CSS, Javascript, React, Streamlit
+- **Backend / API** : Python, Django, Django REST Framework
+- **Database** : SQLite, Firebase
+
 ---
-
-# The ShelfOrbit
-
----
-
-
-An interactive web application to discover, search, and discuss books seamlessly. Built using Django, Django REST Framework, and React.js, it integrates book discovery, recommendations, and real-time chat into a single platform.
 
 <div align="center">
   <img src="img/home page.gif" alt="Home Page" width="600" height="338">
