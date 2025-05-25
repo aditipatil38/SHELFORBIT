@@ -1,7 +1,7 @@
 
 ***
 
-<h1 align="center">The ShelfOrbit</h1>
+<h1 align="center"> The ShelfOrbit </h1>
 
 <p align = "center"> An interactive web application to discover, search, and discuss books seamlessly. Built using Django, Django REST Framework, and React.js, it integrates book discovery, recommendations, and real-time chat into a single platform. 
 </p>
