@@ -158,3 +158,7 @@ React-based real-time chat room for discussing books with other users.
 </div>
 
 ---
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
